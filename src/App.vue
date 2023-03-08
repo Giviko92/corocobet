@@ -1,26 +1,35 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-</template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
+    <router-view />
+    
+    <div>
+       <router-link
+            to="/users"
+            custom
+            v-slot="{ navigate }"
+            >
+        <button
+            class="main"
+            @click="navigate"
+            role="link"
+        >
+            მომხმარებლები
+        </button>
+        </router-link>
+    </div>
+   </template>
+   <script>
+   export default{
+       name:'App',
+   }
+   </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.main{
+    width: 200px;
+    height:50px;
+    border-radius: 12px;
+    background-color:darkorange ;
+    font-weight: bold;
+    border: none;
 }
 </style>
